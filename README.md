@@ -79,7 +79,11 @@ Header
  
 Main (translation)
 - Translation
-- -
+- - Input area
+  - resource source
+  - - articile with details
+    - valid links
+    - etc
 - Searching
 
 Footer
