@@ -2,7 +2,7 @@
 Tcm terminology in different languages
 
 # Reasons
-- Currently on internet there is no professional translations of TCM terminology. It might create inconvenience during the TCM work. This application is to solve this.
+Currently on internet there is no professional translations of TCM terminology. It might create inconvenience during the TCM work. This application is to solve this.
 
 # App Designs
 - Simple
@@ -48,22 +48,22 @@ Tcm terminology in different languages
 - Tailwind maybe bootsrap(dont want to spend time on styling)?
 
 # Versions
-## Version 1
-- Translation
-- - Terminology only in Text
-  - CN/EN
-- Dictionary
-- - simple table list all language
+- Version 1
+- -Translation
+- - -Terminology only in Text
+  - -CN/EN
+- -Dictionary
+- - -simple table list all language
 
-## Version 2 
-- Traslation
-- - Terminology also Pictures / Videos
-  - DE
-- Membership (login) to edit/publish content
-- Forum
+- Version 2 
+- -Traslation
+- - -Terminology also Pictures / Videos
+  - -DE
+- -Membership (login) to edit/publish content
+- -Forum
 
-## Version 3
-- Translation
-- - Termonology also in 3D
-- Membership
+- Version 3
+- -Translation
+- - -Termonology also in 3D
+- -Membership
 
