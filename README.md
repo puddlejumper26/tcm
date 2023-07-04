@@ -54,6 +54,7 @@ Version 1
 - - CN/EN
 - Dictionary
 - - simple table list all language
+    
 Version 2 
 - Traslation
 - - Terminology also Pictures / Videos
