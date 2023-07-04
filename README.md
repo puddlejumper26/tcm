@@ -48,7 +48,6 @@ Currently on internet there is no professional translations of TCM terminology. 
 - Tailwind maybe bootsrap(dont want to spend time on styling)?
 
 # Versions
-
 Version 1
 - Translation
 - - Terminology only in Text
