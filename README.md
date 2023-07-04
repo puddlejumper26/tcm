@@ -13,12 +13,14 @@ Currently on internet there is no professional translations of TCM terminology. 
 - Terminology Translation (should be more than English and Chinese)
 - - German/French/Russian/Japaness/Korean/other Asian language (depending on the target group)
 - Terminology searching (fuzzy)
+  
 - Editing
 - - Allow users to edit / submit content
 - - - text / pictures / videos(embed) / 3D models 
 - - - content needs to be reviewed 
 - - - reviewed by ?? (forum machanism?)
 - - Allow users to discuss - forum
+    
 - Dictionary
 - - To have a separate page to have all the words listed
   - different filters
