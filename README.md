@@ -14,6 +14,7 @@ Currently on internet there is no professional translations of TCM terminology. 
 - Terminology Translation (should be more than English and Chinese)
 - - German/French/Russian/Japaness/Korean/other Asian language (depending on the target group)
 - Terminology searching (fuzzy)
+- - related terminology displaying with results
 - Editing
 - - Allow users to edit / submit content
 - - - text / pictures / videos(embed) / 3D models 
