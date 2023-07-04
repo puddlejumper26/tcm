@@ -54,14 +54,14 @@ Version 1
 - - CN/EN
 - Dictionary
 - - simple table list all language
-- Version 2 
-- - Traslation
-- - - Terminology also Pictures / Videos
-  - - DE
-- - Membership (login) to edit/publish content
-- - Forum
-- Version 3
-- - Translation
-- - - Termonology also in 3D
-- - Membership
+Version 2 
+- Traslation
+- - Terminology also Pictures / Videos
+- - DE
+- Membership (login) to edit/publish content
+- Forum
+Version 3
+- Translation
+- - Termonology also in 3D
+- Membership
 
