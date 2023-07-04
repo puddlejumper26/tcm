@@ -8,6 +8,7 @@ Currently on internet there is no professional translations of TCM terminology. 
 - Simple
 - Easy to use
 - Futuristic effects
+- Minimalism
   
 # App functionalities
 - Terminology Translation (should be more than English and Chinese)
