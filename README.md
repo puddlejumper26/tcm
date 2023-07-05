@@ -2,7 +2,9 @@
 Tcm terminology in different languages
 
 # Reasons
-Currently on internet there is no professional translations of TCM terminology. It might create inconvenience during the TCM work. This application is to solve this.
+Currently on internet there is no standard professional translations of TCM terminology. It might create inconvenience during the TCM work. This application is to solve this.
+In order to reach prefessionality, 
+Translations of This application should be based on the database in it rather than simply online translation.
 
 # App Designs
 - Simple
@@ -27,6 +29,8 @@ Currently on internet there is no professional translations of TCM terminology. 
   - add / remove different language
   - output as PDF
   - keeps updated (when there is any new input) 
+- Authentication
+- - 
 
 # APP General
 - Desktop version
@@ -63,7 +67,9 @@ Version 2
 - - Terminology also Pictures / Videos
 - - DE
 - Membership (login) to edit/publish content
+- - Authentication
 - Forum
+- - ?
   
 Version 3
 - Translation
@@ -73,6 +79,15 @@ Version 3
 Version 4
 - Mobile App?
 
+# Data 
+- Be uploaded to database
+- - Admin
+  - registered users
+- Should have
+- - Source
+- - Detailed Chinese character explaination ?
+- - 
+  
 # Homepage
 Header
 - Navigation items
@@ -89,3 +104,4 @@ Main (translation)
 - Searching
 
 Footer
+- Simple
