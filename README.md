@@ -3,6 +3,7 @@ Tcm terminology in different languages
 
 # Reasons
 Currently on internet there is no standard professional translations of TCM terminology. It might create inconvenience during the TCM work. This application is to solve this.
+
 In order to reach prefessionality, 
 Translations of This application should be based on the database in it rather than simply online translation.
 
@@ -79,14 +80,23 @@ Version 3
 Version 4
 - Mobile App?
 
-# Data 
+# Data
+Type
+- Translation
+- - Text
+  - Pic
+  - Video
+  - 3D Img
+- Profile
+- Forum
+Regulations
 - Be uploaded to database
 - - Admin
   - registered users
 - Should have
 - - Source
 - - Detailed Chinese character explaination ?
-- - 
+
   
 # Homepage
 Header
@@ -105,3 +115,18 @@ Main (translation)
 
 Footer
 - Simple
+
+# Dictionary page
+
+
+# Login Page
+- Email
+- Password
+
+# Profile
+- 
+
+# Forum page 
+Sections
+- Learning resources
+- Discussions
