@@ -1,6 +1,10 @@
 # TCM 
 Tcm terminology in different languages
 
+# Notion Note
+https://www.notion.so/TCM-Application-367377ee02654ad58016eb5987c9efdf?pvs=4
+
+
 # Reasons
 Currently on internet there is no standard professional translations of TCM terminology. It might create inconvenience during the TCM work. This application is to solve this.
 
