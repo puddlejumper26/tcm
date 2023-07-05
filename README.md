@@ -89,6 +89,7 @@ Type
   - 3D Img
 - Profile
 - Forum
+- 
 Regulations
 - Be uploaded to database
 - - Admin
