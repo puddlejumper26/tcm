@@ -1,137 +1,38 @@
-# TCM 
-Tcm terminology in different languages
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-# Notion Note
-https://www.notion.so/TCM-Application-367377ee02654ad58016eb5987c9efdf?pvs=4
+## Getting Started
 
+First, run the development server:
 
-# Reasons
-Currently on internet there is no standard professional translations of TCM terminology. It might create inconvenience during the TCM work. This application is to solve this.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
 
-In order to reach prefessionality, 
-Translations of This application should be based on the database in it rather than simply online translation.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-# App Designs
-- Simple
-- Easy to use
-- Futuristic effects
-- Minimalism
-  
-# App functionalities
-- Terminology Translation (should be more than English and Chinese)
-- - German/French/Russian/Japaness/Korean/other Asian language (depending on the target group)
-- Terminology searching (fuzzy)
-- - related terminology displaying with results
-- Editing
-- - Allow users to edit / submit content
-- - - text / pictures / videos(embed) / 3D models 
-- - - content needs to be reviewed 
-- - - reviewed by ?? (forum machanism?)
-- - Allow users to discuss - forum
-- Dictionary
-- - To have a separate page to have all the words listed
-  - different filters
-  - add / remove different language
-  - output as PDF
-  - keeps updated (when there is any new input) 
-- Authentication
-- - 
+You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
 
-# APP General
-- Desktop version
-- Tablet version
-- Mobile version 
-- Mobile APP (MacOs / Android)
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
-# App structures
-- HomePage
-- - Translation page
-- Dictionary page
-- Forum page
-- Member login page
-- - Member profile 
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
-# Tech stack
-- MongoDB
-- TS
-- No testing
-- Next js?
-- Tailwind maybe bootsrap(dont want to spend time on styling)?
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-# Versions
-Version 1
-- Translation
-- - Terminology only in Text
-- - CN/EN
-- Dictionary
-- - simple table list all language
-- Search function
-    
-Version 2 
-- Traslation
-- - Terminology also Pictures / Videos
-- - DE
-- Membership (login) to edit/publish content
-- - Authentication
-- Forum
-- - ?
-  
-Version 3
-- Translation
-- - Termonology also in 3D
-- Membership
+## Learn More
 
-Version 4
-- Mobile App?
+To learn more about Next.js, take a look at the following resources:
 
-# Data
-Type
-- Translation
-- - Text
-  - Pic
-  - Video
-  - 3D Img
-- Profile
-- Forum
-- 
-Regulations
-- Be uploaded to database
-- - Admin
-  - registered users
-- Should have
-- - Source
-- - Detailed Chinese character explaination ?
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-  
-# Homepage
-Header
-- Navigation items
-- - Translation page
-  - Dictionary page
- 
-Main (translation)
-- Translation
-- - Input area
-  - resource source
-  - - articile with details
-    - valid links
-    - etc
-- Searching
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-Footer
-- Simple
+## Deploy on Vercel
 
-# Dictionary page
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-
-# Login Page
-- Email
-- Password
-
-# Profile
-- 
-
-# Forum page 
-Sections
-- Learning resources
-- Discussions
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
