@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 function StartingPageContent() {
   // Show Link to Login page if NOT auth
 
@@ -11,6 +13,10 @@ function StartingPageContent() {
       </h1>
     </section>
   );
+}
+
+export function getStaticProps() {
+  console.log(22222, process.env.GOOGLE_ID);
 }
 
 export default StartingPageContent;
