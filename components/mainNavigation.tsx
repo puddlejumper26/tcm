@@ -11,6 +11,9 @@ function MainNavigation() {
       <nav>
         <ul>
           <li>
+            <Link href="/edit">Edit</Link>
+          </li>
+          <li>
             <Link href="/dictionary">Dictionary</Link>
           </li>
           <li>
