@@ -1,3 +1,4 @@
+import { hashPassword } from "@/lib/auth";
 import { connectToDatabase } from "@/lib/db";
 
 async function handler(req: any, res: any): Promise<any> {
@@ -11,11 +12,12 @@ async function handler(req: any, res: any): Promise<any> {
     }
 
     // TODO: hash password
+    const hashedPassword = await hashPassword(password);
 
     // store in the DB
     const newMessage = {
       email,
-      password,
+      password: hashedPassword,
     };
 
     const client = await connectToDatabase();
