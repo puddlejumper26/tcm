@@ -1,7 +1,8 @@
-import { connectToDatabase } from "@/lib/db";
-import { NextAuthCredentialsReturn } from "@/utils/common.type";
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { verifyPassword } from "@/lib/auth";
+import { connectToDatabase } from "@/lib/db";
+import { NextAuthCredentialsReturn } from "@/utils/common.type";
 
 export default NextAuth({
   session: { strategy: "jwt" },
@@ -28,6 +29,16 @@ export default NextAuth({
           }
 
           // TODO: compare the password
+          const isValid = await verifyPassword(
+            user.password,
+            credentials.password
+          );
+
+          if (!isValid) {
+            client.close();
+            console.log("NextAuth - Passwords do not match");
+            throw new Error("Password is not valid");
+          }
 
           client.close();
           // 最后会返回一个 object， 说明 auth 成功，这里只放入一个 email，因为不想password被展示出来
