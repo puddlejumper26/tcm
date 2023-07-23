@@ -6,7 +6,7 @@ function EditPage() {
   const editTranslationRef = useRef() as RefObject<HTMLInputElement>;
   const editDescriptionRef = useRef() as RefObject<HTMLTextAreaElement>;
 
-  async function submitFormHandler(event: Event) {
+  async function submitFormHandler(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     const enteredName = editNameInputRef.current?.value;

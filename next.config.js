@@ -1,6 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
-
-module.exports = nextConfig
+module.exports = () => {
+  return {
+    env: {
+      mongodb_username: "admin",
+      mongodb_password: "ZqJ02cA3qXnd0qlK",
+      mongodb_cluster: "maxapp",
+      mongodb_databse: "Tcm",
+    },
+  };
+};

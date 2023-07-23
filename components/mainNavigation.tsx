@@ -19,6 +19,9 @@ function MainNavigation() {
           <li>
             <Link href="/contact">Contact</Link>
           </li>
+          <li>
+            <Link href="/auth">Login</Link>
+          </li>
         </ul>
       </nav>
     </header>
