@@ -28,7 +28,7 @@ export default NextAuth({
             throw new Error("No User Found");
           }
 
-          // TODO: compare the password
+          // compare the password
           const isValid = await verifyPassword(
             user.password,
             credentials.password

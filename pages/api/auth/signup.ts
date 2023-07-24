@@ -11,7 +11,7 @@ async function handler(req: any, res: any): Promise<any> {
       return;
     }
 
-    // TODO: hash password
+    // hash password
     const hashedPassword = await hashPassword(password);
 
     // store in the DB
