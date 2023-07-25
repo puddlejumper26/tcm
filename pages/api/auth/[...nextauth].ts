@@ -12,10 +12,7 @@ const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
-      credentials: {
-        username: {},
-        password: {},
-      },
+      credentials: {},
       async authorize(credentials: any, req: any): Promise<any> {
         console.log("NextAuth - authorize - credentials - ", credentials);
         try {

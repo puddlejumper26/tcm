@@ -2,10 +2,10 @@ import { hashPassword } from "@/lib/auth";
 import { connectToDatabase } from "@/lib/db";
 
 async function handler(req: any, res: any): Promise<any> {
-  console.log("Login handler - request: " + req);
+  console.log("Login handler - request: " + req.body.email);
   console.log("Login handler - res: " + res);
   if (req.method === "POST") {
-    const { email, password } = req.body;
+    const { name, email, password } = req.body;
     if (!email || !email.includes("@") || !password || password.trim() === "") {
       res.status(422).json({ message: "Invalid Input" });
       return;
@@ -16,6 +16,7 @@ async function handler(req: any, res: any): Promise<any> {
 
     // store in the DB
     const newMessage = {
+      name,
       email,
       password: hashedPassword,
     };
