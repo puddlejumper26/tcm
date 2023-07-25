@@ -1,10 +1,13 @@
-import NextAuth from "next-auth";
+import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { verifyPassword } from "@/lib/auth";
 import { connectToDatabase } from "@/lib/db";
-import { NextAuthCredentialsReturn } from "@/utils/common.type";
+import {
+  NextAuthCredentials,
+  NextAuthCredentialsReturn,
+} from "@/utils/common.type";
 
-export default NextAuth({
+const authOptions: NextAuthOptions = {
   session: { strategy: "jwt" },
   providers: [
     CredentialsProvider({
@@ -19,7 +22,7 @@ export default NextAuth({
           const client = await connectToDatabase();
           const userCollection = client.db().collection("tcm_user");
           const user = await userCollection.findOne({
-            email: credentials.email,
+            email: credentials?.email,
           });
 
           if (!user) {
@@ -49,4 +52,9 @@ export default NextAuth({
       },
     }),
   ],
-});
+  pages: {
+    signIn: "/profile",
+  },
+};
+
+export default NextAuth(authOptions);
