@@ -6,10 +6,10 @@ function StartingPageContent() {
 
   return (
     <section>
-      <h1 className="absolute inset-0 flex justify-center items-center">
+      <div className="relative inset-0 flex justify-center items-center">
         {/* Input and Search Component  */}
         <MainPage />
-      </h1>
+      </div>
     </section>
   );
 }
