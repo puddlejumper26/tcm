@@ -1,7 +1,8 @@
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import classes from "./auth-form.module.css";
 import { useRouter } from "next/router";
 import { signIn } from "next-auth/react";
+import LoginContext from "@/context/LoginContext";
 
 async function createUser(
   name: string | undefined,
@@ -14,7 +15,6 @@ async function createUser(
     body: JSON.stringify({ name, email, password }),
     headers: { "Content-Type": "application/json" },
   });
-
   const data = await response.json();
 
   if (!response.ok) {
@@ -25,6 +25,8 @@ async function createUser(
 
 function AuthForm() {
   const [isLogin, setIsLogin] = useState(true);
+
+  const loginContext = useContext(LoginContext) as any;
 
   const emailInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
@@ -39,8 +41,11 @@ function AuthForm() {
     const enteredName = registerNameRef.current?.value;
 
     if (isLogin) {
+      loginContext.setLoginContext(true);
+
       // [...nextauth].js 中的 credentials
       // 下面的object会被作为Argument传入[...nextauth].js中的authorize
+
       const result = await signIn("credentials", {
         redirect: false,
         name: enteredName,
@@ -53,6 +58,8 @@ function AuthForm() {
         router.replace("/profile");
       }
     } else {
+      loginContext.setLoginContext(false);
+
       try {
         const result = await createUser(
           enteredName,
@@ -68,6 +75,8 @@ function AuthForm() {
   function switchAuthModeHandler() {
     setIsLogin((prevState) => !prevState);
   }
+
+  function change() {}
 
   return (
     <section className={classes.auth}>
@@ -98,6 +107,7 @@ function AuthForm() {
           />
         </div>
         <div className={classes.actions}>
+          // TODO: redirect to Profile page
           <button>{isLogin ? "Login" : "Create Account"}</button>
           <button
             type="button"
@@ -108,6 +118,7 @@ function AuthForm() {
           </button>
         </div>
       </form>
+      <button onClick={change}>Click</button>
     </section>
   );
 }

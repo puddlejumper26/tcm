@@ -1,8 +1,12 @@
 import Link from "next/link";
 import Logo from "./logo";
 import classes from "./main-navigation.module.css";
+import { useContext } from "react";
+import LoginContext from "@/context/LoginContext";
 
 function MainNavigation() {
+  const context = useContext(LoginContext) as any;
+
   return (
     <header className={classes.header}>
       <Link href="/">
@@ -21,9 +25,15 @@ function MainNavigation() {
               <Link href="/contact">Contact</Link>
             </li>
           </div>
-          <li>
-            <Link href="/auth">Login</Link>
-          </li>
+          {context.loginContext ? (
+            <li>
+              <Link href="/auth">Login</Link>
+            </li>
+          ) : (
+            <li>
+              <Link href="/profile">Profile</Link>
+            </li>
+          )}
         </ul>
       </nav>
     </header>
