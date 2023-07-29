@@ -26,7 +26,7 @@ async function createUser(
 function AuthForm() {
   const [isLogin, setIsLogin] = useState(true);
 
-  const loginContext = useContext(LoginContext) as any;
+  const loginState = useContext(LoginContext) as any;
 
   const emailInputRef = useRef<HTMLInputElement>(null);
   const passwordInputRef = useRef<HTMLInputElement>(null);
@@ -41,7 +41,7 @@ function AuthForm() {
     const enteredName = registerNameRef.current?.value;
 
     if (isLogin) {
-      loginContext.setLoginContext(true);
+      loginState.setLoginContext(true);
 
       // [...nextauth].js 中的 credentials
       // 下面的object会被作为Argument传入[...nextauth].js中的authorize
@@ -58,7 +58,7 @@ function AuthForm() {
         router.replace("/profile");
       }
     } else {
-      loginContext.setLoginContext(false);
+      loginState.setLoginContext(false);
 
       try {
         const result = await createUser(
@@ -75,8 +75,6 @@ function AuthForm() {
   function switchAuthModeHandler() {
     setIsLogin((prevState) => !prevState);
   }
-
-  function change() {}
 
   return (
     <section className={classes.auth}>
@@ -118,7 +116,6 @@ function AuthForm() {
           </button>
         </div>
       </form>
-      <button onClick={change}>Click</button>
     </section>
   );
 }
