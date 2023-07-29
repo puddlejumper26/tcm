@@ -30,8 +30,8 @@ const authOptions: NextAuthOptions = {
 
           // compare the password
           const isValid = await verifyPassword(
-            user.password,
-            credentials.password
+            credentials.password,
+            user.password
           );
 
           if (!isValid) {

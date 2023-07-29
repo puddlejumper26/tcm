@@ -6,7 +6,7 @@ import LoginContext from "@/context/LoginContext";
 
 function MainNavigation() {
   const loginState = useContext(LoginContext) as any;
-
+  // TODO: Logout
   return (
     <header className={classes.header}>
       <Link href="/">

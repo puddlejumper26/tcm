@@ -101,6 +101,7 @@ function AuthForm() {
             type="password"
             id="login-password"
             required
+            minLength={4}
             ref={passwordInputRef}
           />
         </div>
