@@ -41,8 +41,6 @@ function AuthForm() {
     const enteredName = registerNameRef.current?.value;
 
     if (isLogin) {
-      loginState.setLoginContext(true);
-
       // [...nextauth].js 中的 credentials
       // 下面的object会被作为Argument传入[...nextauth].js中的authorize
 
@@ -55,10 +53,12 @@ function AuthForm() {
       console.log("AuthForm result - ", result);
 
       if (!result?.error) {
+        loginState.setLoginContext(isLogin);
         router.replace("/profile");
       }
     } else {
-      loginState.setLoginContext(false);
+      console.log(11111, isLogin);
+      loginState.setLoginContext(isLogin);
 
       try {
         const result = await createUser(
