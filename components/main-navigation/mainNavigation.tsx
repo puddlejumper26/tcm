@@ -1,8 +1,8 @@
 import Link from "next/link";
-import Logo from "./logo";
 import classes from "./main-navigation.module.css";
 import { useContext } from "react";
 import LoginContext from "@/context/LoginContext";
+import Logo from "../Logo/logo";
 
 function MainNavigation() {
   const loginState = useContext(LoginContext) as any;

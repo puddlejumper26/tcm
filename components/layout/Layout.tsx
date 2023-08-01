@@ -1,6 +1,6 @@
 import { Fragment, useState } from "react";
-import MainNavigation from "./mainNavigation";
 import LoginContext from "@/context/LoginContext";
+import MainNavigation from "../main-navigation/mainNavigation";
 
 function Layout(props: any) {
   const [loginContext, setLoginContext] = useState(true);
