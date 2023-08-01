@@ -6,10 +6,11 @@ import LoginContext from "@/context/LoginContext";
 
 function MainNavigation() {
   const loginState = useContext(LoginContext) as any;
-  // TODO: Logout
+
   function logOut() {
     loginState.setLoginContext(false);
   }
+
   return (
     <header className={classes.header}>
       <Link href="/">
@@ -28,22 +29,24 @@ function MainNavigation() {
               <Link href="/contact">Contact</Link>
             </li>
           </div>
-          {loginState.loginContext ? (
-            <>
+          <div className="flex items-center space-x-14 p-20">
+            {loginState.loginContext ? (
+              <>
+                <li className="mx-8">
+                  <Link href="/profile">Profile</Link>
+                </li>
+                <li className="mx-8">
+                  <Link href="/" onClick={logOut}>
+                    Logout
+                  </Link>
+                </li>
+              </>
+            ) : (
               <li>
-                <Link href="/profile">Profile</Link>
+                <Link href="/auth">Login</Link>
               </li>
-              <li>
-                <Link href="/" onClick={logOut}>
-                  Logout
-                </Link>
-              </li>
-            </>
-          ) : (
-            <li>
-              <Link href="/auth">Login</Link>
-            </li>
-          )}
+            )}
+          </div>
         </ul>
       </nav>
     </header>
