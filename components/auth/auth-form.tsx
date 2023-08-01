@@ -57,7 +57,6 @@ function AuthForm() {
         router.replace("/profile");
       }
     } else {
-      console.log(11111, isLogin);
       loginState.setLoginContext(isLogin);
 
       try {

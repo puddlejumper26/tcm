@@ -5,12 +5,9 @@ function MainPage() {
   let isClicked = false;
   const searchInputRef = useRef() as any;
 
-  useEffect(() => {
-    console.log(1111, searchInputRef.current.value);
-  }, [currentValue]);
+  useEffect(() => {}, [currentValue]);
 
   const onClick = () => {
-    console.log(2222, searchInputRef.current.value);
     if (!!searchInputRef.current?.value) {
       setCurrentValue(searchInputRef.current?.value);
     }
@@ -29,7 +26,7 @@ function MainPage() {
             <button onClick={onClick}>Click/translate</button>
           </div>
         </div>
-        {/* Search Result from Own DB */}
+        {/* Search Result */}
         <div className="flex gap-2">Result Area -- {currentValue}</div>
         {/* Search from Internet */}
       </div>
