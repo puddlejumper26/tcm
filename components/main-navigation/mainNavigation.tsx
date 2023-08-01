@@ -2,7 +2,7 @@ import Link from "next/link";
 import classes from "./main-navigation.module.css";
 import { useContext } from "react";
 import LoginContext from "@/context/LoginContext";
-import Logo from "../Logo/logo";
+import Logo from "../logo/Logo";
 
 function MainNavigation() {
   const loginState = useContext(LoginContext) as any;
@@ -32,6 +32,9 @@ function MainNavigation() {
           <div className="flex items-center space-x-14 p-20">
             {loginState.loginContext ? (
               <>
+                <li className="mx-8">
+                  <Link href="/admin">Admin</Link>
+                </li>
                 <li className="mx-8">
                   <Link href="/profile">Profile</Link>
                 </li>
