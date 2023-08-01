@@ -5,16 +5,15 @@ function MainPage() {
   let isClicked = false;
   const searchInputRef = useRef() as any;
 
-  if (!!searchInputRef.current?.value) {
-    setCurrentValue(searchInputRef.current?.value);
-  }
-
   useEffect(() => {
     console.log(1111, searchInputRef.current.value);
-  }, [isClicked]);
+  }, [currentValue]);
 
   const onClick = () => {
-    console.log(2222);
+    console.log(2222, searchInputRef.current.value);
+    if (!!searchInputRef.current?.value) {
+      setCurrentValue(searchInputRef.current?.value);
+    }
     isClicked = !isClicked;
   };
   return (
@@ -30,8 +29,9 @@ function MainPage() {
             <button onClick={onClick}>Click/translate</button>
           </div>
         </div>
-        {/* Search Result */}
+        {/* Search Result from Own DB */}
         <div className="flex gap-2">Result Area -- {currentValue}</div>
+        {/* Search from Internet */}
       </div>
     </>
   );

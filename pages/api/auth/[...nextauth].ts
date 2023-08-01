@@ -1,7 +1,7 @@
 import NextAuth, { NextAuthOptions } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { verifyPassword } from "@/lib/auth";
-import { connectToDatabase } from "@/lib/db";
+import { connectToUserDatabase } from "@/lib/db";
 import {
   NextAuthCredentials,
   NextAuthCredentialsReturn,
@@ -16,7 +16,7 @@ const authOptions: NextAuthOptions = {
       async authorize(credentials: any, req: any): Promise<any> {
         console.log("NextAuth - authorize - credentials - ", credentials);
         try {
-          const client = await connectToDatabase();
+          const client = await connectToUserDatabase();
           const userCollection = client.db().collection("tcm_user");
           const user = await userCollection.findOne({
             email: credentials?.email,

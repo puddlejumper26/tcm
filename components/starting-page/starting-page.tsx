@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import MainPage from "./main-page";
+import MainPage from "./Main-page";
 
 function StartingPageContent() {
   // Show Link to Login page if NOT auth

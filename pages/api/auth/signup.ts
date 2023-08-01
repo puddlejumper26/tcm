@@ -1,5 +1,5 @@
 import { hashPassword } from "@/lib/auth";
-import { connectToDatabase } from "@/lib/db";
+import { connectToUserDatabase } from "@/lib/db";
 
 async function handler(req: any, res: any): Promise<any> {
   console.log("Login handler - request: " + req.body.email);
@@ -21,7 +21,7 @@ async function handler(req: any, res: any): Promise<any> {
       password: hashedPassword,
     };
 
-    const client = await connectToDatabase();
+    const client = await connectToUserDatabase();
     const db = client.db();
 
     const existedUser = await db
