@@ -35,7 +35,7 @@ function AuthForm() {
 
   async function submitHandler(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-
+    console.log("== Auth Page, Submit Hander ==");
     const enteredEmail = emailInputRef.current?.value;
     const enteredPassword = passwordInputRef.current?.value;
     const enteredName = registerNameRef.current?.value;
