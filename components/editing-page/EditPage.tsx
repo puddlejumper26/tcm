@@ -2,12 +2,18 @@ import { TCM_VOCABULARY_TYPE } from "@/pages/api/db/connectDb";
 import { signIn } from "next-auth/react";
 import { RefObject, useEffect, useRef, useState } from "react";
 import AlertMessage from "../alert/Alert";
+import ToastStatus from "../toast/Toast";
+
+type ErrorObjType = {
+  isError: boolean;
+  errorMessage: string;
+};
 
 async function createVocabulary(
   name: string | undefined,
   translation: string | undefined,
   description: string | undefined
-): Promise<string> {
+): Promise<ErrorObjType> {
   const response = await fetch("/api/db/saveDate", {
     method: "POST",
     body: JSON.stringify({ name, translation, description }),
@@ -15,14 +21,19 @@ async function createVocabulary(
   });
   const data = await response.json();
 
-  let error: string;
+  console.log(11111, data.message);
+  let errorObj = {
+    isError: false,
+    errorMessage: "",
+  };
   if (!response.ok) {
     console.log("Error creating user in EditPage -", response);
-    error = "Error";
+    errorObj.isError = true;
+    errorObj.errorMessage = data.message;
     // throw new Error(data.message);
+    return errorObj;
   }
-
-  return data;
+  return errorObj;
 }
 
 function EditPage() {
@@ -45,8 +56,14 @@ function EditPage() {
       enteredDescription
     );
     console.log("EditPage result - ", result);
-    setAlert("Success");
+    if (!!result.isError) {
+      setAlert("error");
+    }
   }
+
+  // useEffect(() => {
+  //   console.log(11111, alert);
+  // });
 
   return (
     <>
@@ -77,7 +94,8 @@ function EditPage() {
           {/* TODO: show saved successful / failed */}
         </div>
       </form>
-      <AlertMessage message={alert} />
+      {/* <AlertMessage message={alert} /> */}
+      {!!alert && <ToastStatus message={alert} />}
     </>
   );
 }

@@ -15,8 +15,6 @@ const AlertMessageType = {
 };
 
 function AlertMessage(message: any): any {
-  console.log(11111, message);
-
   const {
     isOpen: isVisible,
     onClose,
