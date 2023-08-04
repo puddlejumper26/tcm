@@ -1,6 +1,6 @@
-import { Button, Wrap, WrapItem, useToast } from "@chakra-ui/react";
+import { useToast } from "@chakra-ui/react";
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 type toastAlertType = "success" | "error" | "warning" | "info";
 
@@ -13,7 +13,6 @@ type TotastStatusType = {
 function ToastStatus(toastStatus: TotastStatusType) {
   const { toastAlert, toastMessage, time } = toastStatus;
   const toast = useToast();
-  const statuses = ["success", "error", "warning", "info"];
 
   console.log("ToastStatus - toastStatus - ", toastStatus);
 
@@ -22,7 +21,7 @@ function ToastStatus(toastStatus: TotastStatusType) {
   }, [time]);
 
   function callToast(toastAlert: string, toastMessage: string): any {
-    console.log("ToastStatus - callToast - toastAlert - ", toastAlert);
+    // console.log("ToastStatus - callToast - toastAlert - ", toastAlert);
     toast({
       title: `${toastMessage}`,
       status: `${toastAlert}` as toastAlertType,

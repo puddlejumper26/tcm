@@ -29,7 +29,6 @@ async function createVocabulary(
     console.log("Error creating user in EditPage -", response);
     errorObj.isError = true;
     errorObj.errorMessage = data.message;
-    // throw new Error(data.message);
     return errorObj;
   }
   return errorObj;
@@ -69,9 +68,7 @@ function EditPage() {
     }
   }
 
-  // useEffect(() => {
-  //   console.log(11111, toastAlert);
-  // });
+  // TODO localStorage to save changes
 
   return (
     <>
@@ -99,10 +96,8 @@ function EditPage() {
         {/* video input */}
         <div>
           <button>Submit</button>
-          {/* TODO: show saved successful / failed */}
         </div>
       </form>
-      {/* <AlertMessage message={toastAlert} /> */}
       {!!toastAlert && (
         <ToastStatus
           toastAlert={toastAlert}
