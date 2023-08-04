@@ -21,7 +21,6 @@ async function createVocabulary(
   });
   const data = await response.json();
 
-  console.log(11111, data.message);
   let errorObj = {
     isError: false,
     errorMessage: "",
@@ -41,11 +40,12 @@ function EditPage() {
   const editTranslationRef = useRef() as RefObject<HTMLInputElement>;
   const editDescriptionRef = useRef() as RefObject<HTMLTextAreaElement>;
 
-  const [alert, setAlert] = useState("");
+  const [toastAlert, setToastAlert] = useState("");
+  const [toastMessage, setToastMessage] = useState("");
+  const [time, setTime] = useState(0);
 
   async function submitFormHandler(event: any) {
     event.preventDefault();
-    console.log("== Edit Page, Submit Hander ==");
     const enteredName = editNameInputRef.current?.value;
     const enteredTranslation = editTranslationRef.current?.value;
     const enteredDescription = editDescriptionRef.current?.value;
@@ -55,14 +55,22 @@ function EditPage() {
       enteredTranslation,
       enteredDescription
     );
-    console.log("EditPage result - ", result);
+
+    // console.log("EditPage result - ", result);
+
     if (!!result.isError) {
-      setAlert("error");
+      setToastAlert("error");
+      setToastMessage(result.errorMessage);
+      setTime(Math.random());
+    } else if (!result.isError) {
+      setToastAlert("success");
+      setToastMessage("Saved successfully!");
+      setTime(Math.random());
     }
   }
 
   // useEffect(() => {
-  //   console.log(11111, alert);
+  //   console.log(11111, toastAlert);
   // });
 
   return (
@@ -94,8 +102,14 @@ function EditPage() {
           {/* TODO: show saved successful / failed */}
         </div>
       </form>
-      {/* <AlertMessage message={alert} /> */}
-      {!!alert && <ToastStatus message={alert} />}
+      {/* <AlertMessage message={toastAlert} /> */}
+      {!!toastAlert && (
+        <ToastStatus
+          toastAlert={toastAlert}
+          toastMessage={toastMessage}
+          time={time}
+        />
+      )}
     </>
   );
 }
