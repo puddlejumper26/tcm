@@ -75,6 +75,8 @@ function AuthForm() {
     setIsLogin((prevState) => !prevState);
   }
 
+  // TODO pin input, verify through mobile phone
+
   return (
     <section className={classes.auth}>
       <h1>{isLogin ? "Login" : "Sign Up"}</h1>

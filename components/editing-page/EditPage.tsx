@@ -1,8 +1,6 @@
-import { TCM_VOCABULARY_TYPE } from "@/pages/api/db/connectDb";
-import { signIn } from "next-auth/react";
-import { RefObject, useEffect, useRef, useState } from "react";
-import AlertMessage from "../alert/Alert";
+import { RefObject, useRef, useState } from "react";
 import ToastStatus from "../toast/Toast";
+import { Button, Input, Stack, Textarea } from "@chakra-ui/react";
 
 type ErrorObjType = {
   isError: boolean;
@@ -55,7 +53,7 @@ function EditPage() {
       enteredDescription
     );
 
-    // console.log("EditPage result - ", result);
+    console.log("EditPage result - ", result);
 
     if (!!result.isError) {
       setToastAlert("error");
@@ -73,31 +71,47 @@ function EditPage() {
   return (
     <>
       <form className="flex flex-col" onSubmit={submitFormHandler}>
-        <div className="">Please submit the </div>
-        <label>Name</label>
-        <input
-          minLength={1}
-          type="text"
-          id="edit-name-input"
-          ref={editNameInputRef}
-        />
-        <label>Translation</label>
-        <input
-          minLength={1}
-          type="text"
-          id="edit-translation"
-          ref={editTranslationRef}
-        />
-        <label>Description</label>
-        <textarea id="edit-description" ref={editDescriptionRef} />
+        <Stack spacing={3}>
+          <label>Name</label>
+          <Input
+            placeholder="Name"
+            htmlSize={1}
+            id="edit-name-input"
+            ref={editNameInputRef}
+            size="lg"
+          />
+          <label>Translation</label>
+          <Input
+            htmlSize={1}
+            placeholder="Translation"
+            size="lg"
+            id="edit-translation"
+            ref={editTranslationRef}
+          />
+          <label>Description</label>
+          <Textarea
+            id="edit-description"
+            placeholder="Please enter description"
+            size="sm"
+            resize={"vertical"}
+            ref={editDescriptionRef}
+          />
+        </Stack>
+
         <label>Picture</label>
         {/* Img input */}
         <label>Video</label>
         {/* video input */}
+
         <div>
-          <button>Submit</button>
+          <button>
+            <Button colorScheme="teal" size="lg">
+              Submit
+            </Button>
+          </button>
         </div>
       </form>
+
       {!!toastAlert && (
         <ToastStatus
           toastAlert={toastAlert}
