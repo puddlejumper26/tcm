@@ -16,15 +16,16 @@ async function connectToDatabase() {
   const userCollection = client.db().collection("tcm_professional");
 }
 
-export async function fetchDescription(
-  collection: any,
-  name: string
-): Promise<string | undefined> {
-  const result = await collection.findOne({
+export async function fetchDBData(name: string): Promise<string | undefined> {
+  const client = await connectToUserDatabase();
+  const userCollection = client.db().collection("tcm_professional");
+
+  const result = await userCollection.findOne({
     name: name,
   });
 
-  if (result.length > 0) {
-    return result.translation;
+  if (result?.length > 0) {
+    return result?.translation;
   }
+  return undefined;
 }
