@@ -5,6 +5,7 @@ export type NextAuthCredentials = {};
 export type NextAuthCredentialsReq = {};
 
 export type DBDataType = {
+  _id: string;
   name: string;
   translation: string;
   source?: string;

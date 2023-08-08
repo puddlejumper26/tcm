@@ -1,5 +1,6 @@
 import DictionaryPage from "@/components/dictionary-page/DictionaryPage";
 import { DBDataType } from "@/utils/common.type";
+import { fetchAllDBData } from "./api/db/connectDb";
 
 function Dictionary(props: DBDataType) {
   return (
@@ -11,13 +12,23 @@ function Dictionary(props: DBDataType) {
 
 export default Dictionary;
 
-export function getServerSideProps() {
+export async function getServerSideProps() {
+  const result = await fetchAllDBData();
+  const data = JSON.parse(JSON.stringify(result));
+  console.log("Dictionary - getServerSideProps - data: " + data);
+
+  if (!data) {
+    return {
+      redirect: {
+        destination: "/",
+        permanent: false,
+      },
+    };
+  }
+
   return {
     props: {
-      name: "a",
-      translation: "a",
-      source: "sources",
-      description: "aa",
+      data,
     },
   };
 }

@@ -1,4 +1,5 @@
 import { connectToUserDatabase } from "@/lib/db";
+import { DBDataType } from "@/utils/common.type";
 
 export type TCM_VOCABULARY_TYPE = {
   name: string | undefined;
@@ -14,6 +15,18 @@ export type TCM_VOCABULARY_TYPE = {
 async function connectToDatabase() {
   const client = await connectToUserDatabase();
   const userCollection = client.db().collection("tcm_professional");
+}
+
+export async function fetchAllDBData(): Promise<any | undefined> {
+  const client = await connectToUserDatabase();
+  const userCollection = client.db().collection("tcm_professional");
+
+  const result = await userCollection.find({}).toArray();
+
+  if (!!result) {
+    return result;
+  }
+  return undefined;
 }
 
 export async function fetchDBData(name: string): Promise<string | undefined> {

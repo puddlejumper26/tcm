@@ -11,12 +11,13 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
-import { useEffect } from "react";
 
 function DictionaryPage(props: any) {
-  useEffect(() => {
-    console.log(222, props);
-  });
+  const data = props.props.data;
+  console.log("DictionaryPage - data -", data);
+
+  // TODO search function
+  // TODO Pagination
 
   return (
     <>
@@ -31,14 +32,20 @@ function DictionaryPage(props: any) {
             </Tr>
           </Thead>
           <Tbody>
-            <Tr>
-              <Td>inches</Td>
-              <Td>millimetres (mm)</Td>
-              <Td>25.4</Td>
-              <Td>
-                <Button colorScheme="teal">Details</Button>
-              </Td>
-            </Tr>
+            {data.map((item: DBDataType) => {
+              return (
+                <>
+                  <Tr>
+                    <Td>{item.name}</Td>
+                    <Td>{item.translation}</Td>
+                    <Td>{item.description}</Td>
+                    <Td>
+                      <Button colorScheme="teal">Details</Button>
+                    </Td>
+                  </Tr>
+                </>
+              );
+            })}
           </Tbody>
           <Tfoot></Tfoot>
         </Table>
