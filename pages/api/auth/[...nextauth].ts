@@ -14,7 +14,7 @@ const authOptions: NextAuthOptions = {
       name: "Credentials",
       credentials: {},
       async authorize(credentials: any, req: any): Promise<any> {
-        console.log("NextAuth - authorize - credentials - ", credentials);
+        // console.log("NextAuth - authorize - credentials - ", credentials);
         try {
           const client = await connectToUserDatabase();
           const userCollection = client.db().collection("tcm_user");

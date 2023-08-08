@@ -24,7 +24,7 @@ async function createVocabulary(
     errorMessage: "",
   };
   if (!response.ok) {
-    console.log("Error creating user in EditPage -", response);
+    // console.log("Error creating user in EditPage -", response);
     errorObj.isError = true;
     errorObj.errorMessage = data.message;
     return errorObj;
@@ -53,7 +53,7 @@ function EditPage() {
       enteredDescription
     );
 
-    console.log("EditPage result - ", result);
+    // console.log("EditPage result - ", result);
 
     if (!!result.isError) {
       setToastAlert("error");

@@ -15,7 +15,7 @@ export default Dictionary;
 export async function getServerSideProps() {
   const result = await fetchAllDBData();
   const data = JSON.parse(JSON.stringify(result));
-  console.log("Dictionary - getServerSideProps - data: " + data);
+  // console.log("Dictionary - getServerSideProps - data: " + data);
 
   if (!data) {
     return {

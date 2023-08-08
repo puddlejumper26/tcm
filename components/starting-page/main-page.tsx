@@ -13,7 +13,7 @@ function MainPage(props: DBDataType) {
   }, [currentValue]);
 
   const translate = () => {
-    console.log("translate! - ", inputRef.current.value);
+    // console.log("translate! - ", inputRef.current.value);
     if (!!inputRef.current?.value) {
       setCurrentValue(inputRef.current?.value);
     }

@@ -14,7 +14,7 @@ import {
 
 function DictionaryPage(props: any) {
   const data = props.props.data;
-  console.log("DictionaryPage - data -", data);
+  // console.log("DictionaryPage - data -", data);
 
   // TODO search function
   // TODO Pagination
