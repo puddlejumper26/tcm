@@ -15,7 +15,7 @@ import { useEffect } from "react";
 
 function DictionaryPage(props: any) {
   useEffect(() => {
-    console.log(11111, props);
+    console.log(222, props);
   });
 
   return (

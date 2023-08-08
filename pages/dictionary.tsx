@@ -14,10 +14,9 @@ export default Dictionary;
 export function getServerSideProps() {
   return {
     props: {
-      translation: {
-        translation: "a",
-        source: "sources",
-      },
+      name: "a",
+      translation: "a",
+      source: "sources",
       description: "aa",
     },
   };

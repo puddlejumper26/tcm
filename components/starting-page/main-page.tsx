@@ -9,7 +9,7 @@ function MainPage(props: DBDataType) {
   const inputRef = useRef() as any;
 
   useEffect(() => {
-    console.log(111111, props);
+    console.log(1, props);
   }, [currentValue]);
 
   const translate = () => {
