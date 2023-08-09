@@ -10,11 +10,12 @@ type ErrorObjType = {
 async function createVocabulary(
   name: string | undefined,
   translation: string | undefined,
+  source: string | undefined,
   description: string | undefined
 ): Promise<ErrorObjType> {
   const response = await fetch("/api/db/saveDate", {
     method: "POST",
-    body: JSON.stringify({ name, translation, description }),
+    body: JSON.stringify({ name, translation, source, description }),
     headers: { "Content-Type": "application/json" },
   });
   const data = await response.json();
@@ -35,6 +36,7 @@ async function createVocabulary(
 function EditPage() {
   const editNameInputRef = useRef() as RefObject<HTMLInputElement>;
   const editTranslationRef = useRef() as RefObject<HTMLInputElement>;
+  const editSourceRef = useRef() as RefObject<HTMLTextAreaElement>;
   const editDescriptionRef = useRef() as RefObject<HTMLTextAreaElement>;
 
   const [toastAlert, setToastAlert] = useState("");
@@ -45,11 +47,13 @@ function EditPage() {
     event.preventDefault();
     const enteredName = editNameInputRef.current?.value;
     const enteredTranslation = editTranslationRef.current?.value;
+    const enteredSource = editSourceRef.current?.value;
     const enteredDescription = editDescriptionRef.current?.value;
 
     const result = await createVocabulary(
       enteredName,
       enteredTranslation,
+      enteredSource,
       enteredDescription
     );
 
@@ -96,18 +100,24 @@ function EditPage() {
             resize={"vertical"}
             ref={editDescriptionRef}
           />
+          <label>Source</label>
+          <Textarea
+            id="edit-source"
+            placeholder="Please enter Source"
+            size="sm"
+            resize={"vertical"}
+            ref={editSourceRef}
+          />
         </Stack>
 
-        <label>Picture</label>
+        {/* <label>Picture</label> */}
         {/* Img input */}
-        <label>Video</label>
+        {/* <label>Video</label> */}
         {/* video input */}
 
-        <div>
-          <button>
-            <Button colorScheme="teal" size="lg">
-              Submit
-            </Button>
+        <div className="mt-10 h-20">
+          <button className="w-full h-20 rounded-md bg-lime-900 text-gray-50">
+            Submit
           </button>
         </div>
       </form>

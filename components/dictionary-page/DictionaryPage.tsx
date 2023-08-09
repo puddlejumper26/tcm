@@ -39,7 +39,7 @@ function DictionaryPage(props: any) {
                     <Td>{item.name}</Td>
                     <Td>{item.translation}</Td>
                     <Td>{item.description}</Td>
-                    <Td>
+                    <Td className="w-12">
                       <Button colorScheme="teal">Details</Button>
                     </Td>
                   </Tr>

@@ -17,6 +17,9 @@ export async function getServerSideProps() {
   const data = JSON.parse(JSON.stringify(result));
   // console.log("Dictionary - getServerSideProps - data: " + data);
 
+  // TODO Sortings
+  // TODO Filtering
+
   if (!data) {
     return {
       redirect: {
