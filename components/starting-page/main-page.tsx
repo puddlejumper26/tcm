@@ -3,14 +3,12 @@ import { DBDataType } from "@/utils/common.type";
 import { Box, Button, Container, Input } from "@chakra-ui/react";
 import { LegacyRef, useEffect, useRef, useState } from "react";
 
-function MainPage(props: DBDataType) {
+function MainPage() {
   const [currentValue, setCurrentValue] = useState("");
   let isClicked = false;
   const inputRef = useRef() as any;
 
-  useEffect(() => {
-    console.log(1, props);
-  }, [currentValue]);
+  useEffect(() => {}, [currentValue]);
 
   const translate = () => {
     // console.log("translate! - ", inputRef.current.value);
@@ -41,7 +39,7 @@ function MainPage(props: DBDataType) {
           {/* Search Button*/}
           <div className="flex  mx-8">
             <Button colorScheme="teal" size="lg" onClick={translate}>
-              Click/translate
+              Translate
             </Button>
           </div>
         </div>
@@ -51,6 +49,8 @@ function MainPage(props: DBDataType) {
           <span>From DB</span>
           <Box padding="4" margin="4" bg="gray.300" color="black" maxW="md">
             <span>Translation</span>
+          </Box>
+          <Box padding="4" margin="4" bg="gray.300" color="black" maxW="md">
             <span>Source</span>
           </Box>
           <span>From Google</span>
@@ -61,9 +61,15 @@ function MainPage(props: DBDataType) {
             experiences have a consistent look and feel, not just in our design
             specs, but in production.
           </Box>
+          <span>From Baidu</span>
+          <Box padding="4" margin="4" bg="blue.400" color="black" maxW="md">
+            There are many benefits to a joint design and development system.
+            Not only does it bring benefits to the design team, but it also
+            brings benefits to engineering teams. It makes sure that our
+            experiences have a consistent look and feel, not just in our design
+            specs, but in production.
+          </Box>
         </Container>
-        <div className="flex gap-2">Result Area -- {currentValue}</div>
-        {/* Search from Internet */}
       </div>
     </>
   );

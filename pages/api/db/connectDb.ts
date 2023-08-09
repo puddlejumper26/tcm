@@ -29,7 +29,7 @@ export async function fetchAllDBData(): Promise<any | undefined> {
   return undefined;
 }
 
-export async function fetchDBData(name: string): Promise<string | undefined> {
+export async function fetchDBData(name: string): Promise<any | undefined> {
   const client = await connectToUserDatabase();
   const userCollection = client.db().collection("tcm_professional");
 
@@ -37,8 +37,8 @@ export async function fetchDBData(name: string): Promise<string | undefined> {
     name: name,
   });
 
-  if (result?.length > 0) {
-    return result?.translation;
+  if (!!result) {
+    return result;
   }
   return undefined;
 }

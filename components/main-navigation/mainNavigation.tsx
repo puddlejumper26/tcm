@@ -2,7 +2,7 @@ import Link from "next/link";
 import classes from "./main-navigation.module.css";
 import { useContext } from "react";
 import LoginContext from "@/context/LoginContext";
-import Logo from "../logo/Logo";
+import Logo from "../Logo/Logo";
 
 function MainNavigation() {
   const loginState = useContext(LoginContext) as any;
