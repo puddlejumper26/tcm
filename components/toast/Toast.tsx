@@ -14,7 +14,7 @@ function ToastStatus(toastStatus: TotastStatusType) {
   const { toastAlert, toastMessage, time } = toastStatus;
   const toast = useToast();
 
-  console.log("ToastStatus - toastStatus - ", toastStatus);
+  // console.log("ToastStatus - toastStatus - ", toastStatus);
 
   useEffect(() => {
     callToast(toastAlert, toastMessage);

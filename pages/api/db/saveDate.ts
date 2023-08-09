@@ -1,10 +1,10 @@
 import { connectToUserDatabase } from "@/lib/db";
 
 async function handler(req: any, res: any): Promise<any> {
-  console.log("DB handler - request: " + req.body.email);
-  console.log("DB handler - res: " + res);
+  // console.log("DB handler - request: " + req.body.email);
+  // console.log("DB handler - res: " + res);
   if (req.method === "POST") {
-    const { name, translation, description } = req.body;
+    const { name, translation, source, description } = req.body;
     if (!name) {
       res.status(422).json({ message: "Invalid DB Input" });
       return;
@@ -14,6 +14,7 @@ async function handler(req: any, res: any): Promise<any> {
     const newMessage = {
       name,
       translation,
+      source,
       description,
     };
 

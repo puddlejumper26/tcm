@@ -1,16 +1,7 @@
 import { fetchDBData } from "@/pages/api/db/connectDb";
+import { DBDataType } from "@/utils/common.type";
 import { Box, Button, Container, Input } from "@chakra-ui/react";
 import { LegacyRef, useEffect, useRef, useState } from "react";
-
-type DBDataType = {
-  translation: {
-    translation: string;
-    source: string;
-  };
-  description?: string;
-  video?: string;
-  picture?: string;
-};
 
 function MainPage(props: DBDataType) {
   const [currentValue, setCurrentValue] = useState("");
@@ -18,11 +9,11 @@ function MainPage(props: DBDataType) {
   const inputRef = useRef() as any;
 
   useEffect(() => {
-    console.log(11111, props);
+    console.log(1, props);
   }, [currentValue]);
 
   const translate = () => {
-    console.log("translate! - ", inputRef.current.value);
+    // console.log("translate! - ", inputRef.current.value);
     if (!!inputRef.current?.value) {
       setCurrentValue(inputRef.current?.value);
     }
@@ -76,18 +67,6 @@ function MainPage(props: DBDataType) {
       </div>
     </>
   );
-}
-
-export function getServerSideProps() {
-  return {
-    props: {
-      translation: {
-        translation: "a",
-        source: "sources",
-      },
-      description: "aa",
-    },
-  };
 }
 
 export default MainPage;

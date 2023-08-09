@@ -9,7 +9,7 @@ async function createUser(
   email: string | undefined,
   password: string | undefined
 ): Promise<any> {
-  console.log("AuthForm - createUser");
+  // console.log("AuthForm - createUser");
   const response = await fetch("/api/auth/signup", {
     method: "POST",
     body: JSON.stringify({ name, email, password }),
@@ -18,7 +18,7 @@ async function createUser(
   const data = await response.json();
 
   if (!response.ok) {
-    console.log("Error creating user in AuthForm -", response);
+    // console.log("Error creating user in AuthForm -", response);
     throw new Error(data.message);
   }
 }
@@ -35,7 +35,7 @@ function AuthForm() {
 
   async function submitHandler(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    console.log("== Auth Page, Submit Hander ==");
+    // console.log("== Auth Page, Submit Hander ==");
     const enteredEmail = emailInputRef.current?.value;
     const enteredPassword = passwordInputRef.current?.value;
     const enteredName = registerNameRef.current?.value;
@@ -50,7 +50,7 @@ function AuthForm() {
         email: enteredEmail,
         password: enteredPassword,
       });
-      console.log("AuthForm result - ", result);
+      // console.log("AuthForm result - ", result);
 
       if (!result?.error) {
         loginState.setLoginContext(isLogin);

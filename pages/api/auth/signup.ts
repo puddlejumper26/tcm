@@ -2,8 +2,8 @@ import { hashPassword } from "@/lib/auth";
 import { connectToUserDatabase } from "@/lib/db";
 
 async function handler(req: any, res: any): Promise<any> {
-  console.log("Login handler - request: " + req.body.email);
-  console.log("Login handler - res: " + res);
+  // console.log("Login handler - request: " + req.body.email);
+  // console.log("Login handler - res: " + res);
   if (req.method === "POST") {
     const { name, email, password } = req.body;
     if (!email || !email.includes("@") || !password || password.trim() === "") {
