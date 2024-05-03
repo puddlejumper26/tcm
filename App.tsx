@@ -14,7 +14,6 @@ export default function App() {
     });
 
     if (!result.canceled) {
-      console.log(11111, result);
       // @ts-ignore
       setSelectedImage(result.assets[0].uri);
       console.log(result);

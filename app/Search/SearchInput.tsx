@@ -1,25 +1,52 @@
-import React, { useState } from "react";
-import { View, TextInput, FlatList, Text, StyleSheet } from "react-native";
-import { fitlerData } from "../Utils/fitlerData";
+import React, { useEffect, useState } from "react";
+import {
+  View,
+  TextInput,
+  FlatList,
+  Text,
+  StyleSheet,
+  Button,
+} from "react-native";
+import { fitlerDataEN2CN } from "../Utils/fitlerData";
 import { MockData } from "../MockData/mockData";
+import CrawlComponent from "../Crawl/Crawl";
 
 const SearchInputComponent = () => {
   // State variables
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredData, setFilteredData] = useState<any[]>([]);
+  const [responseText, setResponseText] = useState("");
+
+  const prompt = "test";
+
+  const handleGetResponse = async () => {
+    try {
+      console.log(11111);
+      // const result = await getGPTResponse(prompt);
+      // setResponseText(result);
+    } catch (error) {
+      console.error("Error fetching GPT response:", error);
+    }
+  };
 
   // Handle input change
-  const handleInputChange = (text: any) => {
+  const handleInputChange = (text: string) => {
     setSearchQuery(text);
 
     // Filter the data based on the search query
-    const filtered = fitlerData(MockData, text);
-    setFilteredData(filtered);
+    const filtered = fitlerDataEN2CN(MockData, text);
+
+    if (text === "") {
+      setFilteredData([]);
+    } else {
+      setFilteredData(filtered);
+    }
   };
 
   return (
     <View style={styles.container}>
-      {/* Search input */}
+      <Button title="获取 GPT 响应" onPress={handleGetResponse} />
+
       <TextInput
         style={styles.input}
         placeholder="Search..."
@@ -40,6 +67,9 @@ const SearchInputComponent = () => {
           </View>
         )}
       />
+
+      {/*  crawl result*/}
+      <CrawlComponent />
     </View>
   );
 };
