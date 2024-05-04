@@ -1,13 +1,15 @@
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
-import StartingPage from "./app/Starting-Page/Starting-Page";
+import SearchInputComponent from "../Search/SearchInput";
+import AppHeader from "../Header/Header";
+import TwoColumnTable from "../Dictionary-Page/Dictionary";
 
-export default function App() {
+export default function StartingPage() {
   // @ts-ignore
   return (
     <View style={styles.container}>
-      <StartingPage />
-      <StatusBar style="auto" />
+      <AppHeader />
+      <TwoColumnTable />
+      <SearchInputComponent />
     </View>
   );
 }

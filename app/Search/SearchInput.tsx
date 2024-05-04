@@ -45,8 +45,6 @@ const SearchInputComponent = () => {
 
   return (
     <View style={styles.container}>
-      <Button title="获取 GPT 响应" onPress={handleGetResponse} />
-
       <TextInput
         style={styles.input}
         placeholder="Search..."
@@ -67,6 +65,8 @@ const SearchInputComponent = () => {
           </View>
         )}
       />
+
+      <Button title="获取 GPT 响应" onPress={handleGetResponse} />
 
       {/*  crawl result*/}
       <CrawlComponent />
