@@ -23,6 +23,13 @@ const initialData: DataItem[] = [
   // Add more data rows as needed
 ];
 
+/**
+ * this is only for the two languages (any)
+ * @functions
+ *  1 direct translation between two languages
+ *  2 each column has the reorder functions based on teh alphabets
+ */
+
 const TwoColumnTable: React.FC = () => {
   const [sortedData, setSortedData] = useState<DataItem[]>(initialData);
   const [col1SortOrder, setCol1SortOrder] = useState<"asc" | "desc" | null>(
