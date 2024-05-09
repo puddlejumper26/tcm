@@ -4,16 +4,16 @@
 
 # FE Components & Functions in Plan
 
-    - Header
-    - Starting-Page
+    - Homescreen-Page
         - Header
-        - Search
+            - Burger Menu
+        - Search - Import
         - 
     - Dictionary
         - Two Columns
-            - could be added to PD
+            - add function (to PD)
         - Personal Dictionary(PD)
-            - delete
+            - delete function
             - order by alphabet
             - 
     - Search
@@ -24,7 +24,9 @@
         - Search from Google
 
     - Router
-        - to connect with Dictionary - Two Columns
+        - Burger Menu to Dictionary - Two Columns
+        - Burger Menu to 
+
     - Crawl
         - Crawl from GPT
         - Crawl from Google
@@ -36,6 +38,7 @@
         - Login
         - Profile
         - personal dictionary
+           
     - Admin
         - Login
         - Profile
@@ -54,3 +57,8 @@
 
 # Utils in Plan
 
+    - 
+
+# BUGS
+
+    - Page scroll down issue

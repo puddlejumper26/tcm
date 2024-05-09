@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   FlatList,
   StyleSheet,
+  Button,
 } from "react-native";
 
 type DataItem = {
@@ -29,8 +30,9 @@ const initialData: DataItem[] = [
  *  1 direct translation between two languages
  *  2 each column has the reorder functions based on teh alphabets
  */
+// @ts-ignore
 
-const TwoColumnTable: React.FC = () => {
+const TwoColumnTable: React.FC = ({ navigation }) => {
   const [sortedData, setSortedData] = useState<DataItem[]>(initialData);
   const [col1SortOrder, setCol1SortOrder] = useState<"asc" | "desc" | null>(
     null
@@ -106,6 +108,8 @@ const TwoColumnTable: React.FC = () => {
         renderItem={renderItem}
         keyExtractor={(item) => item.id.toString()}
       />
+
+      <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />
     </View>
   );
 };

@@ -1,21 +1,28 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, View } from "react-native";
-import StartingPage from "./app/Starting-Page/Starting-Page";
+import { StyleSheet } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
+import TwoColumnTable from "./app/Dictionary-Page/Dictionary";
+import HomeScreen from "./app/HomeScreen/HomeScreen";
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
-  // @ts-ignore
   return (
-    <View style={styles.container}>
-      <StartingPage />
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+
+        <Stack.Screen name="TwoColumn" component={TwoColumnTable} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#25292e",
+    // backgroundColor: "#25292e",
     alignItems: "center",
     justifyContent: "center",
   },

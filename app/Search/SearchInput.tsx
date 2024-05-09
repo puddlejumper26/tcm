@@ -21,7 +21,6 @@ const SearchInputComponent = () => {
 
   const handleGetResponse = async () => {
     try {
-      console.log(11111);
       // const result = await getGPTResponse(prompt);
       // setResponseText(result);
     } catch (error) {
