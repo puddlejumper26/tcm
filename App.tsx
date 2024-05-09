@@ -1,8 +1,8 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import TwoColumnTable from "./app/Dictionary-Page/Dictionary";
+import CommonDictionary from "./app/Dictionary-Page/CommonDictionary";
 import HomeScreen from "./app/HomeScreen/HomeScreen";
 import LoginForm from "./app/Login/Login";
 
@@ -20,7 +20,7 @@ export default function App() {
         {/*  Profile Page*/}
 
         {/*Normal Dictionary Page*/}
-        <Stack.Screen name="TwoColumn" component={TwoColumnTable} />
+        <Stack.Screen name="CommonDictionary" component={CommonDictionary} />
         {/*  Personal Dictionary Page*/}
       </Stack.Navigator>
     </NavigationContainer>

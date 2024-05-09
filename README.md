@@ -1,6 +1,6 @@
 # Current Component / Function
 
-    - add function to PD
+    - 
 
 # FE Components & Functions in Plan
 
@@ -11,8 +11,14 @@
         - [x] Search - Import
         - 
     - Dictionary
-        - Two Columns
+        - Common Dictionary (CD)
             - add function (to PD)
+                -  [x] function
+                -  function connect to DB and relfects on PD
+            -  sections (简体、繁体、英文)
+                - jing luo
+                - tuina
+                - 
         - Personal Dictionary(PD)
             - delete function
             - order by alphabet
@@ -33,16 +39,19 @@
         - Crawl from Google
     
     - Logo
-    
+    - Login
+        - [x] Component
+        - Authentication
+        - 
+    - Register
+        - Component
     - Alert
     - User
-        - Login
         - Profile
         - personal dictionary
         - Search History
            
     - Admin
-        - Login
         - Profile
         - Management Page
             - All user / Admins info
@@ -79,3 +88,8 @@
 # Mindmap
 
 https://miro.com/app/board/uXjVPetbOgU=/?share_link_id=186627387564 (View only)
+
+# Note
+
+    - After editor/admin add new translations into CD. 
+        - Using Chatgpt to verify its correctness

@@ -1,6 +1,3 @@
-// should be a list table, could be modified
-// based on the personal account
-
 import React, { useState } from "react";
 import {
   View,
@@ -9,6 +6,7 @@ import {
   FlatList,
   StyleSheet,
   Button,
+  Alert,
 } from "react-native";
 
 type DataItem = {
@@ -24,15 +22,7 @@ const initialData: DataItem[] = [
   // Add more data rows as needed
 ];
 
-/**
- * this is only for the two languages (any)
- * @functions
- *  1 direct translation between two languages
- *  2 each column has the reorder functions based on teh alphabets
- */
-// @ts-ignore
-
-const TwoColumnTable: React.FC = ({ navigation }) => {
+const CommonDictionary: React.FC<{ navigation: any }> = ({ navigation }) => {
   const [sortedData, setSortedData] = useState<DataItem[]>(initialData);
   const [col1SortOrder, setCol1SortOrder] = useState<"asc" | "desc" | null>(
     null
@@ -69,13 +59,26 @@ const TwoColumnTable: React.FC = ({ navigation }) => {
     setSortedData(sorted);
   };
 
-  // Render each item (row) in the table
+  // Render each item (row)
   const renderItem = ({ item }: { item: DataItem }) => (
-    <View style={styles.row}>
+    <TouchableOpacity
+      style={styles.row}
+      onLongPress={() => handleLongPress(item)}
+    >
       <Text style={styles.cell}>{item.col1}</Text>
       <Text style={styles.cell}>{item.col2}</Text>
-    </View>
+    </TouchableOpacity>
   );
+
+  // Long press event handler
+  const handleLongPress = (item: DataItem) => {
+    // Handle long press event; here we show the row data in an alert dialog
+    Alert.alert(
+      "Row Data",
+      `ID: ${item.id}\nColumn 1: ${item.col1}\nColumn 2: ${item.col2}`
+    );
+    // Add logic for sending data, e.g., sending data through a network request
+  };
 
   return (
     <View style={styles.container}>
@@ -102,6 +105,7 @@ const TwoColumnTable: React.FC = ({ navigation }) => {
           </Text>
         </TouchableOpacity>
       </View>
+
       {/* Data rows */}
       <FlatList
         data={sortedData}
@@ -109,6 +113,7 @@ const TwoColumnTable: React.FC = ({ navigation }) => {
         keyExtractor={(item) => item.id.toString()}
       />
 
+      {/* Button to navigate to the "Home" page */}
       <Button title="Go to Home" onPress={() => navigation.navigate("Home")} />
     </View>
   );
@@ -132,4 +137,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TwoColumnTable;
+export default CommonDictionary;

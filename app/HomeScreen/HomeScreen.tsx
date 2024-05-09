@@ -18,7 +18,7 @@ const HomeScreen = ({ navigation }: any) => {
   };
 
   const pressTwoColumn = () => {
-    navigation.navigate("TwoColumn");
+    navigation.navigate("CommonDictionary");
     setMenuOpen(false);
   };
 
@@ -57,11 +57,14 @@ const HomeScreen = ({ navigation }: any) => {
             <Text style={styles.menuItem} onPress={pressLogin}>
               Login
             </Text>
-            <Text style={styles.menuItem}>Profile</Text>
             <Text style={styles.menuItem} onPress={pressTwoColumn}>
-              Two Column
+              Common Dictionary
             </Text>
-            {/* Add more menu items as needed */}
+
+            {/*Could only be seen after logged in */}
+            <Text style={styles.menuItem}>Profile</Text>
+            <Text style={styles.menuItem}>Personal Dictionary</Text>
+            <Text style={styles.menuItem}>Log Out</Text>
           </View>
         )}
       </View>
