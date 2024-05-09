@@ -1,13 +1,14 @@
 # Current Component / Function
 
-    - Router to connect Dictionary component
+    - add function to PD
 
 # FE Components & Functions in Plan
 
     - Homescreen-Page
         - Header
-            - Burger Menu
-        - Search - Import
+            - [x] Burger Menu
+            - Logo
+        - [x] Search - Import
         - 
     - Dictionary
         - Two Columns
@@ -24,7 +25,7 @@
         - Search from Google
 
     - Router
-        - Burger Menu to Dictionary - Two Columns
+        - [x] Burger Menu to Dictionary - Two Columns
         - Burger Menu to 
 
     - Crawl
@@ -38,10 +39,19 @@
         - Login
         - Profile
         - personal dictionary
+        - Search History
            
     - Admin
         - Login
         - Profile
+        - Management Page
+            - All user / Admins info
+                - id
+                - name
+                - credits
+            - add / delete function on TWO-Column page
+                - upload new translation page
+                - Confirmation tab
 
 # Functions in Plan
 
@@ -49,16 +59,23 @@
     - Crawl from Google
     - Crawl from GPT
         - [x] logic is complete, but can not use yet, needs to pay
+    - Authentication
 
 # Database
 
+    - How to define functions of DB
+        - User upload
     - Select DB
-        - Input Mock DB   
-
-# Utils in Plan
-
-    - 
+        - Input Mock DB
 
 # BUGS
 
     - Page scroll down issue
+
+# Data Analysis & Security
+
+    - Datadog Free version API 
+
+# Mindmap
+
+https://miro.com/app/board/uXjVPetbOgU=/?share_link_id=186627387564 (View only)

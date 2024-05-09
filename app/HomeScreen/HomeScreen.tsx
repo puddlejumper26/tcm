@@ -17,6 +17,16 @@ const HomeScreen = ({ navigation }: any) => {
     setMenuOpen((prevState) => !prevState);
   };
 
+  const pressTwoColumn = () => {
+    navigation.navigate("TwoColumn");
+    setMenuOpen(false);
+  };
+
+  const pressLogin = () => {
+    navigation.navigate("Login");
+    setMenuOpen(false);
+  };
+
   // @ts-ignore
   return (
     <View>
@@ -37,17 +47,18 @@ const HomeScreen = ({ navigation }: any) => {
         </View>
 
         {/* Placeholder for right-side icons or empty space */}
-        <View style={styles.rightContainer}></View>
+        <View style={styles.rightContainer}>
+          <Text>Avatar</Text>
+        </View>
 
         {/* The menu content */}
         {menuOpen && (
           <View style={styles.menu}>
-            <Text style={styles.menuItem}>Login</Text>
+            <Text style={styles.menuItem} onPress={pressLogin}>
+              Login
+            </Text>
             <Text style={styles.menuItem}>Profile</Text>
-            <Text
-              style={styles.menuItem}
-              onPress={() => navigation.navigate("TwoColumn")}
-            >
+            <Text style={styles.menuItem} onPress={pressTwoColumn}>
               Two Column
             </Text>
             {/* Add more menu items as needed */}
