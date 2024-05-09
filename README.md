@@ -1,15 +1,64 @@
-# TCM
+# Current Component / Function
 
-# Purpose
+    - Router to connect Dictionary component
 
-Professional TCM translation platform
+# FE Components & Functions in Plan
 
-# Functions
+    - Homescreen-Page
+        - Header
+            - Burger Menu
+        - Search - Import
+        - 
+    - Dictionary
+        - Two Columns
+            - add function (to PD)
+        - Personal Dictionary(PD)
+            - delete function
+            - order by alphabet
+            - 
+    - Search
+        - Direct Search
+            - [x] Search with mock data
+            - Search from Database
+        - Search from GPT
+        - Search from Google
 
-- Translation
-- Dictionaries
-- Forums
+    - Router
+        - Burger Menu to Dictionary - Two Columns
+        - Burger Menu to 
 
-# Mindmap
+    - Crawl
+        - Crawl from GPT
+        - Crawl from Google
+    
+    - Logo
+    
+    - Alert
+    - User
+        - Login
+        - Profile
+        - personal dictionary
+           
+    - Admin
+        - Login
+        - Profile
 
-https://miro.com/app/board/uXjVPetbOgU=/?share_link_id=186627387564 (View only)
+# Functions in Plan
+
+    - Search from DB
+    - Crawl from Google
+    - Crawl from GPT
+        - [x] logic is complete, but can not use yet, needs to pay
+
+# Database
+
+    - Select DB
+        - Input Mock DB   
+
+# Utils in Plan
+
+    - 
+
+# BUGS
+
+    - Page scroll down issue
