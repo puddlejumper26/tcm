@@ -17,7 +17,7 @@ const HomeScreen = ({ navigation }: any) => {
     setMenuOpen((prevState) => !prevState);
   };
 
-  const pressTwoColumn = () => {
+  const PressCommonDictionary = () => {
     navigation.navigate("CommonDictionary");
     setMenuOpen(false);
   };
@@ -55,9 +55,9 @@ const HomeScreen = ({ navigation }: any) => {
         {menuOpen && (
           <View style={styles.menu}>
             <Text style={styles.menuItem} onPress={pressLogin}>
-              Login
+              Login / Register
             </Text>
-            <Text style={styles.menuItem} onPress={pressTwoColumn}>
+            <Text style={styles.menuItem} onPress={PressCommonDictionary}>
               Common Dictionary
             </Text>
 

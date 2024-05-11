@@ -5,6 +5,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import CommonDictionary from "./app/Dictionary-Page/CommonDictionary";
 import HomeScreen from "./app/HomeScreen/HomeScreen";
 import LoginForm from "./app/Login/Login";
+import RegistrationForm from "./app/Login/Register";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,6 +17,9 @@ export default function App() {
 
         {/*  Login Page */}
         <Stack.Screen name="Login" component={LoginForm} />
+
+        {/*Registration Page*/}
+        <Stack.Screen name="Register" component={RegistrationForm} />
 
         {/*  Profile Page*/}
 

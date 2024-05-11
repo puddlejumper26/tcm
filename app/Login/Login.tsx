@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, TextInput, Button, StyleSheet } from "react-native";
 
-const LoginForm = () => {
+// @ts-ignore
+const LoginForm = ({ navigation }) => {
   // Initialize state variables for name and email inputs
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -11,6 +12,10 @@ const LoginForm = () => {
     // Perform desired action when the button is pressed, such as form submission
     // Here, you can replace the following line with your own logic
     console.log(`Name: ${name}, Email: ${email}`);
+  };
+
+  const handleRegister = () => {
+    navigation.navigate("Register");
   };
 
   return (
@@ -36,6 +41,7 @@ const LoginForm = () => {
 
       {/* Button to submit the form */}
       <Button title="Submit" onPress={handleSubmit} />
+      <Button title="Register" onPress={handleRegister} />
     </View>
   );
 };

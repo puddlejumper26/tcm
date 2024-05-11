@@ -28,7 +28,9 @@
             - [x] Search with mock data
             - Search from Database
         - Search from GPT
+            - [x] logics
         - Search from Google
+            - logics
 
     - Router
         - [x] Burger Menu to Dictionary - Two Columns
@@ -39,12 +41,14 @@
         - Crawl from Google
     
     - Logo
+
     - Login
         - [x] Component
         - Authentication
-        - 
+        -
     - Register
-        - Component
+        - [x] Component
+        - Authentication through google ??
     - Alert
     - User
         - Profile
@@ -61,6 +65,10 @@
             - add / delete function on TWO-Column page
                 - upload new translation page
                 - Confirmation tab
+
+    - Settings
+        - Languages
+        - Color 
 
 # Functions in Plan
 
