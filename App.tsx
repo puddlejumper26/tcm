@@ -6,6 +6,7 @@ import CommonDictionary from "./app/Dictionary-Page/CommonDictionary";
 import HomeScreen from "./app/HomeScreen/HomeScreen";
 import LoginForm from "./app/Login/Login";
 import RegistrationForm from "./app/Login/Register";
+import CommentComponent from "./app/Comment/CommentComponent";
 
 const Stack = createNativeStackNavigator();
 
@@ -26,6 +27,8 @@ export default function App() {
         {/*Normal Dictionary Page*/}
         <Stack.Screen name="CommonDictionary" component={CommonDictionary} />
         {/*  Personal Dictionary Page*/}
+
+        <Stack.Screen name="Comments" component={CommentComponent} />
       </Stack.Navigator>
     </NavigationContainer>
   );

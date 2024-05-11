@@ -10,6 +10,7 @@
             - Logo
         - [x] Search - Import
         - 
+
     - Dictionary
         - Common Dictionary (CD)
             - add function (to PD)
@@ -34,7 +35,9 @@
 
     - Router
         - [x] Burger Menu to Dictionary - Two Columns
-        - Burger Menu to 
+        - [x] Burger Menu to Login
+        - [x] Burger Menu to Register
+        - [] Burger Menu to 
 
     - Crawl
         - Crawl from GPT
@@ -49,7 +52,9 @@
     - Register
         - [x] Component
         - Authentication through google ??
+
     - Alert
+
     - User
         - Profile
         - personal dictionary
@@ -68,7 +73,10 @@
 
     - Settings
         - Languages
-        - Color 
+        - Theme 
+    - Contacts
+        - Comments
+            - [x] Version 1 - with local logged in Email
 
 # Functions in Plan
 

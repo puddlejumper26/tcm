@@ -17,13 +17,18 @@ const HomeScreen = ({ navigation }: any) => {
     setMenuOpen((prevState) => !prevState);
   };
 
-  const PressCommonDictionary = () => {
+  const pressCommonDictionary = () => {
     navigation.navigate("CommonDictionary");
     setMenuOpen(false);
   };
 
   const pressLogin = () => {
     navigation.navigate("Login");
+    setMenuOpen(false);
+  };
+
+  const pressComments = () => {
+    navigation.navigate("Comments");
     setMenuOpen(false);
   };
 
@@ -57,13 +62,17 @@ const HomeScreen = ({ navigation }: any) => {
             <Text style={styles.menuItem} onPress={pressLogin}>
               Login / Register
             </Text>
-            <Text style={styles.menuItem} onPress={PressCommonDictionary}>
+            <Text style={styles.menuItem} onPress={pressCommonDictionary}>
               Common Dictionary
             </Text>
 
             {/*Could only be seen after logged in */}
             <Text style={styles.menuItem}>Profile</Text>
             <Text style={styles.menuItem}>Personal Dictionary</Text>
+            <Text style={styles.menuItem}>Settings</Text>
+            <Text style={styles.menuItem} onPress={pressComments}>
+              Comments
+            </Text>
             <Text style={styles.menuItem}>Log Out</Text>
           </View>
         )}
