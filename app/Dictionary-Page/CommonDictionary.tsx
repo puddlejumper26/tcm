@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -8,22 +8,17 @@ import {
   Button,
   Alert,
 } from "react-native";
+import axios from "axios";
 
-type DataItem = {
-  id: number;
-  col1: string;
-  col2: string;
-};
+const dotenv = require("dotenv");
 
-const initialData: DataItem[] = [
-  { id: 1, col1: "Apple", col2: "Banana" },
-  { id: 2, col1: "Orange", col2: "Pineapple" },
-  { id: 3, col1: "Grapes", col2: "Mango" },
-  // Add more data rows as needed
-];
+import { DICTIONARY_DATA_TYPE } from "../Utils/dataType";
+
+// const COMMON_DIC_FETCH_URL = process.env["COMMON_DIC_FETCH_URL "];
 
 const CommonDictionary: React.FC<{ navigation: any }> = ({ navigation }) => {
-  const [sortedData, setSortedData] = useState<DataItem[]>(initialData);
+  const [loaded, setLoading] = useState(false);
+  const [sortedData, setSortedData] = useState<DICTIONARY_DATA_TYPE[]>([]);
   const [col1SortOrder, setCol1SortOrder] = useState<"asc" | "desc" | null>(
     null
   );
@@ -31,15 +26,31 @@ const CommonDictionary: React.FC<{ navigation: any }> = ({ navigation }) => {
     null
   );
 
+  useEffect(() => {
+    fetchData();
+  }, [loaded]);
+
+  const fetchData = () => {
+    axios
+      .get("http://localhost:4000/getData")
+      .then((data) => {
+        if (!!data.data) {
+          setSortedData(data.data);
+          setLoading(true);
+        }
+      })
+      .catch((e) => console.error(e));
+  };
+
   // Function to handle sorting by column 1
   const sortCol1 = () => {
     const newOrder = col1SortOrder === "asc" ? "desc" : "asc";
     setCol1SortOrder(newOrder);
     const sorted = [...sortedData].sort((a, b) => {
       if (newOrder === "asc") {
-        return a.col1.localeCompare(b.col1);
+        return a.Chinese_character.localeCompare(b.Chinese_character);
       } else {
-        return b.col1.localeCompare(a.col1);
+        return b.Chinese_character.localeCompare(a.Chinese_character);
       }
     });
     setSortedData(sorted);
@@ -51,31 +62,31 @@ const CommonDictionary: React.FC<{ navigation: any }> = ({ navigation }) => {
     setCol2SortOrder(newOrder);
     const sorted = [...sortedData].sort((a, b) => {
       if (newOrder === "asc") {
-        return a.col2.localeCompare(b.col2);
+        return a.English_character.localeCompare(b.English_character);
       } else {
-        return b.col2.localeCompare(a.col2);
+        return b.English_character.localeCompare(a.English_character);
       }
     });
     setSortedData(sorted);
   };
 
   // Render each item (row)
-  const renderItem = ({ item }: { item: DataItem }) => (
+  const renderItem = ({ item }: { item: DICTIONARY_DATA_TYPE }) => (
     <TouchableOpacity
       style={styles.row}
       onLongPress={() => handleLongPress(item)}
     >
-      <Text style={styles.cell}>{item.col1}</Text>
-      <Text style={styles.cell}>{item.col2}</Text>
+      <Text style={styles.cell}>{item.Chinese_character}</Text>
+      <Text style={styles.cell}>{item.English_character}</Text>
     </TouchableOpacity>
   );
 
   // Long press event handler
-  const handleLongPress = (item: DataItem) => {
+  const handleLongPress = (item: DICTIONARY_DATA_TYPE) => {
     // Handle long press event; here we show the row data in an alert dialog
     Alert.alert(
       "Row Data",
-      `ID: ${item.id}\nColumn 1: ${item.col1}\nColumn 2: ${item.col2}`
+      `ID: ${item._id}\nColumn 1: ${item.Chinese_character}\nColumn 2: ${item.English_character}`
     );
     // Add logic for sending data, e.g., sending data through a network request
   };
@@ -86,7 +97,7 @@ const CommonDictionary: React.FC<{ navigation: any }> = ({ navigation }) => {
       <View style={styles.row}>
         <TouchableOpacity onPress={sortCol1} style={styles.cell}>
           <Text>
-            Column 1
+            Chinese
             {col1SortOrder === "asc"
               ? " 🔼"
               : col1SortOrder === "desc"
@@ -96,7 +107,7 @@ const CommonDictionary: React.FC<{ navigation: any }> = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity onPress={sortCol2} style={styles.cell}>
           <Text>
-            Column 2
+            English
             {col2SortOrder === "asc"
               ? " 🔼"
               : col2SortOrder === "desc"
@@ -110,7 +121,7 @@ const CommonDictionary: React.FC<{ navigation: any }> = ({ navigation }) => {
       <FlatList
         data={sortedData}
         renderItem={renderItem}
-        keyExtractor={(item) => item.id.toString()}
+        keyExtractor={(item) => item._id.toString()}
       />
 
       {/* Button to navigate to the "Home" page */}

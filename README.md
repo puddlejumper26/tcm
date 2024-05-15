@@ -1,6 +1,6 @@
 # Current Component / Function
 
-    - 
+    - How to define functions of DB
 
 # FE Components & Functions in Plan
 
@@ -24,6 +24,7 @@
             - delete function
             - order by alphabet
             - 
+
     - Search
         - Direct Search
             - [x] Search with mock data
@@ -49,6 +50,7 @@
         - [x] Component
         - Authentication
         -
+
     - Register
         - [x] Component
         - Authentication through google ??
@@ -60,7 +62,7 @@
         - personal dictionary
         - Search History
            
-    - Admin
+    - [HOLD] Admin
         - Profile
         - Management Page
             - All user / Admins info
@@ -74,6 +76,7 @@
     - Settings
         - Languages
         - Theme 
+
     - Contacts
         - Comments
             - [x] Version 1 - with local logged in Email
@@ -109,3 +112,5 @@ https://miro.com/app/board/uXjVPetbOgU=/?share_link_id=186627387564 (View only)
 
     - After editor/admin add new translations into CD. 
         - Using Chatgpt to verify its correctness
+
+# gu feng mingzi de wangzhan
